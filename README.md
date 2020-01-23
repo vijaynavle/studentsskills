@@ -1,4 +1,5 @@
-# studentsskills
+# People skills Maintenance REst service using Springboot.
+
 Sample student skill REst + Jpa example
 
 Spring configuration file location:
