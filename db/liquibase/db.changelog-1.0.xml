@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="vijay" id="tag_ss_000_1">
+        <tagDatabase tag="ss_000_1"/>
+    </changeSet>
+
+    <changeSet author="vijay" id="ss_000_2" runOnChange="true">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter=";"
+                path="./schema_ddl_1.0.sql"
+                relativeToChangelogFile="true"
+                splitStatements="false"
+                stripComments="false"/>
+        <rollback>
+            DROP SCHEMA IF EXISTS student_skills CASCADE;
+        </rollback>
+    </changeSet>
+
+    <changeSet author="vijay" id="ss_000_3" runOnChange="true">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter=";"
+                path="./ref_data_1.0.sql"
+                relativeToChangelogFile="true"
+                splitStatements="false"
+                stripComments="false"/>
+        <rollback>
+               DROP SCHEMA IF EXISTS student_skills CASCADE;
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
